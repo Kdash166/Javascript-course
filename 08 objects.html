@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>08 objects</title>
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+      const product = {
+        name: "socks",
+        price: 1090,
+      };
+      console.log(product);
+      // inside an object you can
+      //add values together
+      //  the code on the left is called
+      // the property
+      console.log(product.name);
+      // the above code will access the value
+      // of socks.
+      console.log(product.price);
+      // the above code will access price
+      // 1090 will be logged.
+      // the property can be used to change the
+      // objects name
+      product.name = "cotton socks";
+      console.log(product);
+
+      // syntax rules
+      // {} contains the object
+      // name(property):'kieran'(value); property value pair
+      // propety value pairs are seperated by commas;
+      // you can access properties values using product.name
+      // this is called dot notation.
+      // you can add a new property value pair via the following
+      product.size = "large";
+      // this adds a new property to an object.
+      console.log(product);
+      product.color = "black";
+      console.log(product);
+      delete product.color;
+      // this deletes the new poperty
+      console.log(product);
+      console.log(typeof product.name);
+      console.log(typeof product);
+      console.log(typeof product.price);
+      // you can see the types of individual properties
+      // objects make code cleaner by allowing grouping of values
+      // and using of values together.
+
+      // product.newpropert
+
+      const product2 = {
+        name: "shirt",
+        "delivery-time": ` 1 day`,
+        rating: {
+          stars: 4.5,
+          count: 87,
+        },
+        // this is a nested object
+        // a nestred object makes the object more
+        // logical to access values you just repeat
+        // the bracket and dot notation multiple times
+        fun: function function1() {
+          console.log("function inside object");
+          // you can store a function inside an object
+          // this works because a function is another type of value
+        },
+      };
+
+      console.log(product2);
+      console.log(product2.name);
+      // dot notation to access data inside an object
+      console.log(product2["name"]);
+      // bracket notation to access an object
+      // bracket notation lets us use properties that dont work
+      // with dot notation.
+     // console.log(product2.delivery - time);
+      // this throws an error because js interprets the dash
+      // as a minus sign so it you have to use brackets in this case
+      console.log(product2["delivery-time"]);
+      // you can also use bracket notation inside the object
+      // betweeen the brackets you can use any.
+      // we usually use . notation because its shorter and easier to read.
+      // only use bracket notation when totally necessary.
+      // you do not actually need the brackets iside the object
+      console.log(product2.rating.count);
+      product2.fun();
+      // because this is a function you can run it normally
+      // just like any other function
+      // when you save a function inside an object it is called a method
+      // console.log is a method of javascript
+      // console is an object and log is a method.
+      console.log(typeof console);
+      // console is an object
+      console.log(typeof console.log);
+      // this will show as a function also a method.
+      // math.random(); is a method math is the object
+      // random is the function.
+      // console and math are built in objects
+      // JSON and Local Storage are also built-in-objects
+      // JSON is a syntax but it has less features
+      // in JSON all properties and strings must use double quotes
+      // JSON does not support single quotes or functions.
+      // why use JSON JSON is used because it can be understood by almost
+      // every other programming language
+      // for this reason JSON is used when we send information to other computers
+      // it is also used as a universal way of storing data.
+      console.log(JSON.stringify(product2));
+      // this allows the product2 to be converted so it uses
+      // JSON Syntax
+      // the function is not included as it is not allowed
+      // JSON is a sting type.
+      const jsonString = JSON.stringify(product2)
+      JSON.parse(jsonString);
+      // this reverses JSON stringify turning JSON 
+      // data back into a javascript object
+      // the built in Javascript object helps us convert between
+      // JSON data and javascript objects.
+      // variables only exist on the current page
+      // local storage stores information on a more perminant basis. 
+      // if you refresh a page variables are deleted. 
+      //  local storage remains even after a website is refreshed
+
+      /*null*/
+      // null is a falsey value in javscript
+      // what is the difference between null and undefined?
+      // null is normally used when we intentionally want something 
+      // to be empty where as undefined is when things are empty unintentionally
+    function func(parameter ='default'){
+      console.log(parameter);
+    }
+
+    func(); 
+    // => 'default'
+    func(undefined) 
+        // => 'default'
+     func(null);
+        // => null
+
+        // from the above example you can see null is where you intentionally 
+        // want something to be empty.
+        // generally speaking however null and undefined are treated the same
+        /*auto boxing*/
+
+        // objects can have properties and methods. 
+        console.log('hello'.length);
+        // other things can also have properties and methods. 
+        // in the above example the strings property size will be displayed in the console.
+        console.log('hello'.toUpperCase());
+        // ToUpperCase is a method of strings this will turn the word into 
+        // upper case a method is just a function that is stored in an object.
+        // the reason that you can apply methods and properties to strings is because
+        // of autoboxing javascript "wraps" strings in a special object 
+        // this allows us to apply properties and methods to it.
+        0.3.toString
+        true.toString
+        // autoboxing also works with stings and booleans.
+        //undefined.toString
+        //null.toString
+        // autoboxing does not work with null and undefined.
+    const  object1 = {
+      message:'hello',
+      message2:'world'
+    };
+
+    console.log(`this is my message to you: "${object1.message} ${object1.message2}"`)
+const object2 = object1 
+// objects are references the variables are stored somewhere else in memory 
+// the above code just makes a copy of the reference it doesnt copy the object
+// so if you make changes to object 1 it will also change/update object 2.
+// this is called copy by references. 
+
+object1.message = 'good Job';
+// dispite declaring the object with const you can still change the variable
+// this is because the variable contains a reference not a immutable value.
+console.log(object1);
+
+console.log(object2);
+
+const  object3 = {
+      message:'hello',
+      message2:'world'
+    };
+
+    console.log(object3 === object1);
+    // this evaluates to false as the objects are different to each other because the
+    // despite values being the same the object or the "reference" is different.
+    console.log(object2 === object1);
+    // this evaluates to true because object1 and object2 are the same reference.
+    const  object4 = {
+      message:'hello',
+      message2:'world',
+      price: 799
+    };
+
+    // const message = object4.message;
+    const {message, price} = object4;
+    // this is a shortcut if you want to save a value of an object to a variable where the property name and the 
+    // new variable name match.
+    // this is called destructuring. so the two lines of code above do exactly the 
+    // same.
+// destructuring takes the property and value out of the object and saves them as a variable and value
+console.log(message);
+console.log(price);
+// you can destructure multiple properties and values at a time.
+
+const object5 = {
+  //message:message
+  message,
+  //short hand property the same as the above code
+  // method: function function1(){
+    // console.log('method');
+  // }
+
+  method(){
+  console.log('method');
+  }
+  // the above is called the shortHand method and is a quicker way 
+  // for writing methods.
+};
+console.log(object5.message)
+object5.method();
+
+  </script>
+  </body>
+</html>

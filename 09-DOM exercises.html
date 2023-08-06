@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <button class="a9">9a</button>
+    <button class="b9">9b</button>
+    <button class="heads-btn" onclick="
+    hTselector.innerHTML = 'You chose: Heads'"   
+    ">heads</button>
+    <button class="tails-btn"
+    onclick="
+    hTselector.innerHTML = 'You chose: Tails'"
+      >tails</button>
+    <p class="js-h-t-result"></p>
+    <input class="js-name-field" placeholder="enter your name" onkeydown="displayUserNameListener(event);"></input>
+    <button class="js-submit"
+    onclick="displayUserName();"
+    >Submit</button>
+    <p class="js-display-name"></p>
+
+    <title></title>
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+let hTselector = document.querySelector('.js-h-t-result');
+
+function displayUserName() {
+let nameInput = document.querySelector('.js-name-field').value;
+document.querySelector('.js-display-name').innerHTML = `Your name is ${nameInput}`;
+};
+
+
+function displayUserNameListener(event){
+if(event.code === "Enter"){
+displayUserName();
+};
+
+};
+
+
+console.log(document.querySelector(".a9"));
+document.querySelector(".a9").innerHTML="9b done!";
+
+    </script>
+  </body>
+</html>

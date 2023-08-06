@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+
+  <body>
+    <button
+      style="
+        background-color: goldenrod;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+      "
+      onclick="
+      let flip = Math.random();
+      let result ='';
+      let guess ='heads';
+      console.log(flip);
+  result = (flip > 0.5) ? 'heads':'tails';
+ (result === guess) ?
+console.log('you win!') : console.log('you lose!');
+"
+    >
+      Flip me! $
+    </button>
+    <script>
+      let hour = 13;
+      let name = "Kieran";
+
+      if (hour >= 6 && hour <= 12) {
+        console.log("good morning " + `${name}` + " it is " + hour + ":00 !");
+      } else if (hour >= 13 && hour <= 17) {
+        console.log("good evening " + `${name}` + " it is " + hour + ":00 !");
+      } else {
+        console.log("goodnight " + `${name}` + " it is " + hour + ":00 !");
+      }
+
+      let age = 67;
+      let ticketPrice = 20;
+      const isHoliday = true;
+      if ((age <= 6 || age >= 65) && isHoliday === true) {
+        console.log(
+          "$" +
+            ticketPrice * 0.8 +
+            ".00 (20% discount added as holiday consession)"
+        );
+      } else {
+        console.log("$" + ticketPrice + ".00 (Normal day ticket price)");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+        const amazonProduct2 ={
+            name:'basketball',
+            price: 1550,
+            "delivery-time": '3 days'
+        }
+        const amazonProduct3 ={
+            name:'basketball',
+            price: 1550,
+            "delivery-time": '3 days'
+        }
+
+
+        const amazonProduct1 ={
+            name:'basetball',
+            price: 550,
+            "delivery-time": '5 days'
+        }
+
+        console.log(amazonProduct2);
+        amazonProduct1.price += 500;
+        console.log(amazonProduct2);
+
+        console.log(amazonProduct2["delivery-time"])
+        
+        function comparePrice(product1, product2){
+            if(product1.price > product2.price)
+            return console.log(`the ${product1.name} is more expensive than ${product2.name} by $${(product1.price - product2.price)/100}`)
+            if(product2.price > product1.price)
+            return console.log(`the ${product2.name} is more expensive than ${product1.name} by $${(product2.price - product1.price)/100} `)
+            if(product2.price = product1.price)
+            return console.log(`the ${product2.name} is the same price as the ${product1.name} they both cost $${(product2.price)/100} `)
+
+        };
+
+        comparePrice(amazonProduct1, amazonProduct2);
+
+        function isSameProduct(product1, product2){
+            if (product2.name === product1.name && product2.price === product1.price){
+                return console.log("this is the same product!")
+            } else {
+                return console.log("these products are not the same!")
+
+            }
+        };
+
+        isSameProduct(amazonProduct1,amazonProduct2);
+        isSameProduct(amazonProduct3,amazonProduct2);
+const greeting = "GOOD MORNING".toLowerCase();
+        console.log(greeting);
+    </script>
+  </body>
+</html>

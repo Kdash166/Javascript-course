@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+    <style></style>
+  </head>
+
+  <body>
+    <button class="hello">hello</button>
+    <button class="js-clickme">clickme</button>
+    <button id="hello-world">hello-foo-bar</button>
+
+    <!-- built in objects are object that
+    exist in JS such as console math 
+JSON etc the DOM is just another example 
+of a built in object -->
+
+    <script>
+
+// document.body.innerHTML = 'hello';
+// document is an object the dot notation means we are
+// accessing a property of that object. called body. 
+// body is also an object so we can access.innerHTML
+//  when we make the innerHTML = to 'hello'
+// the body is replaced with hello so the DOM is linked
+// to the page in a special way.
+// document.title = 'good job!'
+// changes the title property on the tabs.
+// the document object is linked to the webpage
+// the document object models the web page 
+// hense the name document object model. 
+//  the dom works the same way as any othe object
+// the DOM has properties like body and title that 
+// are accessed using .notation like any other object.
+//  however the DOM is special as changing properties here. 
+// allows you to change propeties directly on the webpage.
+// the DOM also has methods not just properties.
+// eg .querySelector.
+
+/*console.log(document.title);
+document.title = 'changed';
+// this changes the title.
+console.log(document.body);
+// an important feature of JS is html can exist in html. 
+// the DOM combinds html and JS and together alowing JS to control html
+console.log(typeof document.body);
+// this tells us the html element is just an object when inside of javascript
+// body also has useful html methods and properties
+console.log(document.body.innerHTML);
+document.body.innerHTML = '<button style="border-radius:8px;color:white;background-color:black;font-family:sans-serif;font-size:3rem;"onclick="alert(`you know JS good`)">Good-Job</button>' ;
+*/
+// inner html gives us control of all the html inside the body.
+// you can see in the above code we placed a button with inline js and css into the body
+console.log(document.querySelector('button').innerHTML);
+document.querySelector('button')
+    .innerHTML ="good bye";
+    // you can put the dot notation on a second line 
+// just tab it to make it easier to read.
+console.log(document.querySelector('.js-clickme'));
+// the above console log can be stored into a variable.
+const buttonElement = document.querySelector('.js-clickme');
+console.log(buttonElement);
+// when we start with a dot this is called a class selector
+// this is also used in CSS infact anything can be used here that is 
+// used in CSS.
+// we use this to style elements with a spercific class. 
+// common practice is to start the class with js-
+console.log(document.querySelector('#hello-world'));
+
+// document.quertyselector with a '.js-clickme' selects a class 
+// with a # you select the ID.
+
+// this targets the text and changes it 
+// this is a method that lets us get any element
+// from the page and put it inside our javascript. 
+//the string tells us which element it will get. 
+// you can use the string body p and it will find and 
+// get the first object. 
+// every html element lets us control its html 
+// by using .innerHTML.
+// you can take html elements and save them as a variable
+// the dom basically allows you to combined html and JS 
+// together allowing you to fully manipulate the page.
+
+
+        
+ 
+        
+
+
+    </script>
+  </body>
+</html>

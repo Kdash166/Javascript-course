@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09-DOM-projects</title>
+    <style></style>
+  </head>
+
+  <body>
+    <p class="youtube-desc">YouTube subscribe button</p>
+    <button class="js-yt-button" onclick="
+    subscribe();
+    "> 
+    Subscribe
+    </button>
+    <!-- if you add spaces the spaces will show up in inner html
+    to solve this problem you can use the property innerText
+this will give you all the text minus the spaces -->
+   
+
+    <p class="rps">Rock Paper Scissors</p>
+<a href="/08-rock-paper-scissors.html" class="click">Click here</a>    
+
+ 
+<p class="az-calc">Amazon Shipping Calculator</p>
+
+    <p class="orders-under">Orders under $40 = +$10 shipping</p>
+    <p class="orders-over">Orders over $40 = FREE shipping</p>
+    <input type="text" placeholder="cost of shipping" class="calc-field"
+    onkeydown="
+   calculateCostEnter(event);
+   
+   
+   "> 
+    
+    <button class="calculate"
+    onclick="
+   calculateCost();
+   "
+   
+
+
+  
+    >Calculate</button>
+     <!-- on click and on key down are know as event listeners they run javascript upon a certain event
+    when the event happens it runs JS there are many other events to listen in on.
+event is an object every event listener gets one -->
+
+<p class="js-total-cost"></p>
+   
+
+
+    
+    
+    <script>
+
+    String(25);
+    // this converts the number into a string
+    console.log('25' - 5)
+    console.log('25' + 5)
+    // this will display 255 as addition works differently 
+    //  if a string only contains a number Javascript will automatically convert it into a number
+    // if - / * are applied to it.
+    // this is another example of type coerceon.
+    // it is recommended that if you do any math you convert the value into a number first. you can convert it back into a string at a later date.
+    window.document 
+    // this gives us the same as the document we have been using for DOM manipulaton
+    window.console.log("window")
+    // this does the same as console.log because the window is part of the browser. 
+    window.alert("hello world")
+// alert is also part of the window object this allows you to create pop ups
+// ao why dont we type window. because JS automatically adds this to the front of console document and alert. 
+        function subscribe(){
+const buttonElement = document.querySelector('.js-yt-button');
+
+if (buttonElement.innerText ==='Subscribed')
+{
+    buttonElement.innerText = 'Subscribe';
+}else {
+    buttonElement.innerText ='Subscribed'}
+
+};
+
+function calculateCost(){
+let cost = Number(document.querySelector('.calc-field').value);
+    // you could console.log at different points to work out that the the math isnt working correctly
+    // you can do  a console.log(typeof cost) this will let you know that cost is a string and when you add a string to a number
+    // type cooercian occurs this means the 10 becomes a string.
+    //  you have to manually convert the value using Number function or ParseFloat. to prevent the data type coorecian 
+    
+   if (isNaN(cost)){
+    // isNaN() is a JavaScript function that checks whether a given value is "Not-a-Number" (NaN). 
+    // It returns true if the value is not a valid number, 
+    // and false if the value is a valid number or can be coerced into one.
+    document.querySelector(
+    '.js-total-cost'
+ ).innerHTML = `please enter a valid number`
+    }
+    
+    else if (cost < 40) {
+ 
+ document.querySelector(
+    '.js-total-cost'
+ ).innerHTML = `$ ${cost += 10}`;
+} else {
+    document.querySelector(
+    '.js-total-cost'
+ ).innerHTML = `$ ${cost}`;
+
+}
+
+}; 
+ function calculateCostEnter(event){
+if(event.code === 'Enter'){
+    calculateCost();
+   }
+};
+</script>
+  </body>
+</html>

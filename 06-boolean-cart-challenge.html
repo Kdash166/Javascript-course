@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cart buttons</title>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+    <button onclick="console.log(`cart quantity: ${quantity}`);">
+      Show Quantity
+    </button>
+
+    <button
+      onclick="
+      if (quantity >= 10){
+          alert('basket is full');
+      } else {
+          quantity++;
+          console.log(`cart quantity: ${quantity}`);
+      }"
+    >
+      Add to Cart
+    </button>
+
+    <button
+      onclick="
+      if (quantity >= 9){
+          alert('basket is full');
+        
+      } else {
+        quantity += 2
+        console.log(`cart quantity: ${quantity}`);
+      }"
+    >
+      +2
+    </button>
+
+    <button
+      onclick="
+      if (quantity >= 8){
+          alert('basket is full');
+      } else {
+        quantity += 3
+        console.log(`cart quantity: ${quantity}`);
+      }"
+    >
+      +3
+    </button>
+
+    <button onclick="quantity = 0; console.log(`cart was reset`);">
+      Reset Cart
+    </button>
+
+    <button
+      onclick="
+      if (quantity <= 1){
+        alert('Not enough items in the cart');
+          
+      } else { 
+          quantity--;
+          console.log(`cart quantity: ${quantity}`);
+      }"
+    >
+      Remove from cart -1
+    </button>
+
+    <button
+      onclick="
+      if (quantity <= 2){
+        alert('Not enough items in the cart');
+          
+      } else { 
+          quantity-=2;
+          console.log(`cart quantity: ${quantity}`);
+      }"
+    >
+      -2
+    </button>
+
+    <button
+      onclick="
+      if (quantity <= 3){
+          alert('Not enough items in the cart');
+
+      } else { 
+          quantity-=3;
+          console.log(`cart quantity: ${quantity}`);
+      }"
+    >
+      -3
+    </button>
+
+    <script>
+      let quantity = 0;
+    </script>
+    <!-- camelCase
+    PascalCase
+  kebab-case - doesnt work in JS as - is already a minus symbol use in file names html and css
+snake_case is used in other languages not really JS 
+when nameing try to pick a variable not to short not to long-->
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+  <body>
+    <script>
+      const variable1 = 3;
+      //this creates a container that can be updated this is what a variable is.
+      console.log(variable1);
+      let calculation = 2 + 2;
+      console.log(calculation);
+      console.log(calculation + 2);
+      // takes value saved inside the variable and adds it before logging it
+      //
+
+      const result = calculation + 2;
+      console.log(result);
+      // any type of value can be saved in a variable
+      let message = "Hello";
+      console.log(message);
+      console.log(";");
+      // let creates a new variable and it needs a name
+      // you cant use let as a variable name these are reserved words
+      // you also cannot start it with a number  you cannot use
+      // special characters appart from _ and $
+      // if you wanted to use special word you can end it with a number
+      //let1 for example.
+      // ; is like a full stop in english it denotes the end of an instruction in JS
+      // if you remove the semi colon from the line above then the code wont work.
+      // javascript will try to insert the last semicolon automatically.
+      // semi colon insertion can sometimes insert the semicolons in the wrong place
+      // it is better to add them in yourself
+
+      variable1 = 5;
+      console.log(variable1);
+      // if you look at where the variable was first logged it still contains
+      // the value 3 the value only changes when a value is reassigned.
+      // you dont use let when reassigning it will try to create a new variable
+      // it causes an error to create two variables with the same name.
+
+      variable1 = variable1 + 1;
+      console.log(variable1);
+      // this code increments the variable
+      const variable2 = 7;
+      // const makes code safer and easier to understand
+      // means the code wont change use const by default
+      // only use let if you intend to change 
+      var variable3 = 5;
+      // var is the original way to create variables
+      // it tends not to be used because of issues 
+      // you may see it in later code.
+      // you can use typeof with variables this is very useful 
+
+      console.log( typeof variable2)
+      console.log( typeof message)
+</script>
+  </body>
+</html>

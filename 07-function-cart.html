@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+      updateCartQuantity(1);
+    ">Add to Cart</button>
+
+    <button onclick="
+      updateCartQuantity(2);
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick="
+      updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity(5);
+    ">+5</button>
+
+    <button onclick="
+      updateCartQuantity(-1);
+    ">Remove from cart</button>
+
+    <button onclick="
+      updateCartQuantity(-2);
+    ">-2</button>
+
+    <button onclick="
+      updateCartQuantity(-3);
+    ">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
+
+    <script>
+      let cartQuantity = 0;
+
+      function updateCartQuantity(change) {
+        if (cartQuantity + change > 10) {
+        alert('the cart is full');
+        return;
+        }
+      if (cartQuantity + change < 0){
+        alert('the cart doesnt have enough items');
+        return; 
+    } 
+    cartQuantity += change
+console.log(`Cart quantity: ${cartQuantity}`);
+    }
+
+    // The cartQuantity variable is declared outside the function, 
+    // making it a global variable that can be accessed and modified from anywhere in the code,
+    //  including the updateCartQuantity function, without needing to pass it as a parameter.
+
+    // By removing the else block and directly returning the value when the condition is met, 
+    // we eliminate the need for an if-else statement. 
+    // The function will exit early if the condition is true and return the appropriate value.
+    // this only works in a function and is called an "early return".
+
+    function practiceEarlyReturn(){
+    if (5>7 || 6>5){
+        console.log(`error detected`);
+        return;
+    }
+    
+    console.log(`false`);
+
+}
+practiceEarlyReturn();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+
+  <body>
+    <p class="orders-under">Orders under $40 = +$10 shipping</p>
+    <p class="orders-over">Orders over $40 = FREE shipping</p>
+    <input type="text" placeholder="cost of shipping" class="calc-field"
+    onkeydown="
+   calculateCostEnter(event);
+   "> 
+   <button class="calculate"
+   onclick="
+  calculateCost();
+  ">Calculate</button>
+
+<p class="js-total-cost"></p>
+
+<input type="text" onkeyup="updateText();" class="js-text-entry">
+<p class="js-display-typed-text" style="font-size:18px"></p>
+
+
+
+    <script>
+    function updateText(){
+let typedText = document.querySelector('.js-text-entry')
+.value; 
+ document.querySelector('.js-display-typed-text').innerHTML = typedText;
+}
+function calculateCost(){
+let cost = Number(document.querySelector('.calc-field').value);
+    // you could console.log at different points to work out that the the math isnt working correctly
+    // you can do  a console.log(typeof cost) this will let you know that cost is a string and when you add a string to a number
+    // type cooercian occurs this means the 10 becomes a string.
+    //  you have to manually convert the value using Number function or ParseFloat. to prevent the data type coorecian 
+    
+   if (isNaN(cost)){
+    // isNaN() is a JavaScript function that checks whether a given value is "Not-a-Number" (NaN). 
+    // It returns true if the value is not a valid number, 
+    // and false if the value is a valid number or can be coerced into one.
+    document.querySelector(
+    '.js-total-cost'
+ ).innerHTML = `please enter a valid number`
+    }
+    
+    else if (cost < 40) {
+ 
+ document.querySelector(
+    '.js-total-cost'
+ ).innerHTML = `Your total cost is $ ${(cost + 10).toFixed(2)}`;
+} else {
+    document.querySelector(
+    '.js-total-cost'
+ ).innerHTML = `You total cost is $ ${cost.toFixed(2)}`;
+//  .toFixed is a method that allows you to fix the amount 
+// of decimal places that proceed after the decimal point. 
+//  this helps counteract floating point inprecision.  
+
+}
+
+}; 
+ function calculateCostEnter(event){
+if(event.code === 'Enter'){
+    calculateCost();
+   }
+};
+
+    </script>
+  </body>
+</html>

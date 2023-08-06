@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+
+        function greet(name){
+            
+            if(!name){
+        console.log(`Hello there!`)
+            } else {
+        console.log(`Hello ${name}`)
+            }
+        }
+        greet(`Simon`);
+        greet();
+
+        function convertToFahrenheit(celsius){
+            if (celsius){
+            let fahrenheit = Math.round((celsius*9)/5)+32;
+            console.log(`${celsius} Degrees C is ${fahrenheit} Fahrenheit`);
+            
+        } else {
+            console.log("You need to enter a value!")
+        }
+    }
+convertToFahrenheit(60);
+convertToFahrenheit(180);
+convertToFahrenheit();
+
+function convertToCelsius(fahrenheit){
+            if (fahrenheit){
+            let celsius = Math.round(((fahrenheit-32)*5/9));
+            console.log(`${fahrenheit}F is  ${celsius} Degrees C`);
+            
+        } else {
+            console.log("You need to enter a value!")
+        }
+    }
+    convertToCelsius(82);
+    convertToCelsius(75);
+    convertToCelsius();
+
+function convertToTemp(degrees, units) {
+    if (units === `C` && degrees) {
+        let fahrenheit = Math.round((degrees*9)/5)+32;
+            console.log(`${degrees} Degrees C is ${fahrenheit} Fahrenheit`);
+
+    } else if (units === `F` && degrees) {
+        let celsius = Math.round(((degrees-32)*5/9));
+            console.log(`${degrees}F is  ${celsius} Degrees C`);
+    } else {
+        console.log('you have not entered either degrees or units correctly');
+    }
+}
+    
+    convertToTemp(50,'C');
+    convertToTemp(100,'F');
+    convertToTemp(50);
+    convertToTemp('C');
+    convertToTemp();
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rock paper scissors</title>
+    <style></style>
+  </head>
+  <!-- what steps do we need to do and 
+ how can we code these. 
+ when we click a button the computer randomly 
+ picks a move 
+ the window will then be displayed in an alert. 
+an algorithm is just a set of double quotes 
+Math.random(); generates a random number between 0 and 1 
+it will generate a different number each time
+logical operators let us conbimned boolean values-->
+
+  <body>
+    <p>Rock Paper Scissors</p>
+
+    <button
+      class="rock"
+      onclick=" playGame('rock')
+
+"
+    >
+      Rock
+    </button>
+    <button
+      class="paper"
+      onclick="
+      playGame('paper')"
+    >
+      Paper
+    </button>
+    <button class="scissors" onclick=" playGame('scissors')">Scissors</button>
+
+    <script>
+      function playGame(playerMove) {
+        const computerMove = generateComputerMove();
+        result = "";
+
+        if (playerMove === "scissors") {
+
+          if (computerMove === "scissors") {
+            result = "Tie.";
+          } else if (computerMove === "rock") {
+            result = "You lose.";
+          } else {
+            result = "You win!";
+          }
+        } else if (playerMove === "paper") {
+
+          if (computerMove === "paper") {
+            result = "Tie.";
+          } else if (computerMove === "scissors") {
+            result = "You lose.";
+          } else {
+            result = "You win!";
+          }
+        } else {
+          
+          if (computerMove === "rock") {
+            result = "Tie.";
+          } else if (computerMove === "paper") {
+            result = "You lose.";
+          } else {
+            result = "You win!";
+          }
+        }
+        alert(
+          `you picked ${playerMove}. Computer picked ${computerMove}. ${result}`
+        );
+      }
+
+      function generateComputerMove() {
+        randomNumber = Math.random();
+        let computerMove = "";
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMove = "rock";
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = "paper";
+        } else {
+          computerMove = "scissors";
+        }
+
+        return computerMove;
+      }
+    </script>
+  </body>
+</html>

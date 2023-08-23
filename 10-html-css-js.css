@@ -1,0 +1,41 @@
+body{
+    font-family: arial;
+    padding-bottom: 110px;
+}
+
+.js-yt-button{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor:pointer;
+    margin-bottom: 30px;
+}
+
+.is-subscribed{
+    background-color: rgb(240,240,240);
+    color:black;
+}
+
+.calc-field{
+    padding: 10px;
+    
+    font-size: 15px;
+
+}
+.calculate{
+    border: none;
+    padding: 12px 15px;
+background-color: rgb(2, 161, 2);
+color:white;
+border-radius: 2px;
+font-size: 15px;
+cursor:pointer;
+
+}
+
+.invalid{
+    color:red;
+}

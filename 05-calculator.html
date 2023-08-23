@@ -2,83 +2,7 @@
 <html>
   <head>
     <title>calculator</title>
-    <style>
-      body {
-        background-color: cadetblue;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      }
-      .calculator-container {
-        margin-inline: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: blue;
-        width: fit-content;
-        height: fit-content;
-        padding: 10px;
-        border-radius: 8px;
-      }
-
-      .display-container {
-        height: fit-content;
-        background-color: black;
-        color: antiquewhite;
-        font-size: 20px;
-        padding: 0 23px;
-        margin: 5px;
-        margin-bottom: 10px;
-        border-radius: 6px;
-        min-height: 60px;
-        min-width: 150px;
-      }
-      .button-container {
-        display: flex;
-        flex-direction: row;
-      }
-      .number-container {
-        display: grid;
-        grid-template-columns: 40px 40px 40px;
-        column-gap: 10px;
-        row-gap: 10px;
-      }
-      .operations-container {
-        display: grid;
-        grid-template-columns: 40px;
-        column-gap: 10px;
-        row-gap: 10px;
-        margin-left: 15px;
-      }
-
-      button {
-        font-family: "Courier New", Courier, monospace;
-        font-size: large;
-        font-weight: bold;
-        background-color: blueviolet;
-        color: aliceblue;
-        border-radius: 4px;
-        height: 40px;
-        width: 40px;
-        transition: box-shadow 0.25s, height 0.25s, width 0.25s;
-        margin: 0;
-      }
-      .op-btn {
-        background-color: cornflowerblue;
-        height: 30px;
-        width: 40px;
-      }
-      .op-btn:hover {
-        height: 33px;
-        width: 42px;
-      }
-      button:hover {
-        margin: 0;
-        cursor: pointer;
-        box-shadow: 2px 2px 2px white;
-        height: 42px;
-        width: 42px;
-      }
-    </style>
+    <link rel="stylesheet" href="05-calculator.css">
   </head>
   <body>
     <div class="calculator-container">
@@ -87,9 +11,7 @@
       </div>
       <div class="button-container">
         <div class="number-container">
-          <button onclick="addToCalculation('0');console.log(calculation);">
-            0
-          </button>
+          
           <button onclick="addToCalculation('1');console.log(calculation);">
             1
           </button>
@@ -99,6 +21,13 @@
           <button onclick="addToCalculation('3');console.log(calculation);">
             3
           </button>
+          <button
+          class="op-btn"
+          onclick="addToCalculation(' + ');console.log(calculation);"
+        >
+          +
+        </button>
+
           <button onclick="addToCalculation('4');console.log(calculation);">
             4
           </button>
@@ -108,24 +37,21 @@
           <button onclick="addToCalculation('6');console.log(calculation);">
             6
           </button>
+          <button
+          class="op-btn"
+          onclick="addToCalculation(' - ');console.log(calculation);"
+        >
+          -
+        </button>
           <button onclick="addToCalculation('7');console.log(calculation);">
             7
           </button>
           <button onclick="addToCalculation('8');console.log(calculation);">
             8
           </button>
-          <div style="width: 40px; height: 40px"></div>
+
           <button onclick="addToCalculation('9');console.log(calculation);">
             9
-          </button>
-          <div style="width: 40px; height: 40px"></div>
-        </div>
-        <div class="operations-container">
-          <button
-            class="op-btn"
-            onclick="addToCalculation(' + ');console.log(calculation);"
-          >
-            +
           </button>
           <button
             class="op-btn"
@@ -134,69 +60,43 @@
             x
           </button>
           <button
+            onclick="calculateResult();console.log(calculation);"
+          >
+            =
+          </button>
+          
+
+          <button onclick="addToCalculation('.');console.log(calculation);">
+            .
+          </button>
+
+          <button onclick="addToCalculation('0');console.log(calculation);">
+            0
+          </button>
+          <button
             class="op-btn"
             onclick="addToCalculation(' / ');console.log(calculation);"
           >
             ÷
           </button>
-          <button
-            class="op-btn"
-            onclick="addToCalculation(' - ');console.log(calculation);"
-          >
-            -
-          </button>
-          <button
-            class="op-btn"
-            onclick="calculateResult();console.log(calculation);"
-          >
-            =
-          </button>
+
 
           <button
-            class="op-btn"
+          class="clear"
             onclick="clearCalculation();console.log(calculation);"
           >
-            C
+            clear
           </button>
+          
         </div>
+                     
+                    
+
+          
+        
       </div>
     </div>
-    <script>
-       let calculation = JSON.parse(localStorage.getItem("calculation")) || "";
-  
-      const par = document.getElementById("display");
-      par.innerHTML = calculation;
-
-      function updateDisplay() {
-        par.innerHTML = calculation;
-      }
-
-      function addToCalculation(value) {
-        calculation += value;
-        updateDisplay();
-        localStorage.setItem("calculation", JSON.stringify(calculation));
-  
-      }
-
-      function printLength(string) {
-        console.log(string.length);
-  
-      }
-      function calculateResult() {
-        calculation = eval(calculation);
-        updateDisplay();
-        localStorage.setItem("calculation", JSON.stringify(calculation));
-
-      }
-
-      function clearCalculation() {
-        calculation = "";
-        updateDisplay();
-        localStorage.setItem("calculation", JSON.stringify(calculation));
-
-      }
-
-      localStorage.setItem("calculation", JSON.stringify(calculation));
-    </script>
+    <script src="05-calculator.js">
+  </script>
   </body>
 </html>

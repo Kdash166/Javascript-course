@@ -1,0 +1,50 @@
+
+.amazon{
+    padding: 8px 40px;
+    border-radius: 18px;
+    color: black;
+    margin-left: 15px;
+    background-color: rgb(255, 216, 20);
+    cursor: pointer;
+    border: none;
+} 
+.request{
+    padding: 12px 25px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+}
+
+
+.schedule{
+    padding: 12px 25px;
+    border-radius: 6px;
+    color: black;
+    font-weight: bold;
+    margin-left: 15px;
+    background-color: rgb(  230, 230, 230);
+    cursor: pointer;
+    border: none;
+}
+.js-button-default-1,
+.js-button-default-2,
+.js-button-default-3{
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: black;
+    font-weight: bold;
+    margin-left: 15px;
+    background-color: rgb(  230, 230, 230);
+    cursor: pointer;
+    border: none;
+    margin-top: 50px;
+}
+.is-toggled{
+    color: white;
+    background-color: black;
+
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10-CSS-DOM-projects</title>
+    <link rel="stylesheet" href="10-html-css-js.css" />
+  </head>
+
+  <body>
+    <p class="youtube-desc">YouTube subscribe button</p>
+    <button
+      class="js-yt-button"
+      onclick="
+    subscribe();
+    "
+    >
+      Subscribe
+    </button>
+    <!-- if you add spaces the spaces will show up in inner html
+    to solve this problem you can use the property innerText
+this will give you all the text minus the spaces -->
+
+    <p class="rps">Rock Paper Scissors</p>
+    <a href="/10-rps-css-html.html" class="click">Click here</a>
+
+    <p class="az-calc">Amazon Shipping Calculator</p>
+
+    <p class="orders-under">Orders under $40 = +$10 shipping</p>
+    <p class="orders-over">Orders over $40 = FREE shipping</p>
+    <input
+      type="text"
+      placeholder="cost of shipping"
+      class="calc-field"
+      onkeydown="
+   calculateCostEnter(event);
+   
+   
+   "
+    />
+
+    <button
+      class="calculate"
+      onclick="
+   calculateCost();
+   "
+    >
+      Calculate
+    </button>
+    <p class="js-total-cost"></p>
+
+    <script>
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-yt-button");
+        // every html also has a .classList object that gives us control over the class
+        // attriube
+        // when we click the button we can add a different class
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerText = "Subscribed";
+          buttonElement.classList.add("is-subscribed");
+        } else {
+          buttonElement.innerText = "Subscribe";
+          buttonElement.classList.remove("is-subscribed");
+        }
+        
+        // remove removes the class and does the opposite to add
+      }
+
+      function calculateCost() {
+        let cost = Number(document.querySelector(".calc-field").value);
+
+        if (isNaN(cost)) {
+          document.querySelector(
+            ".js-total-cost"
+          ).innerHTML = `please enter a valid number`;
+          document.querySelector(".js-total-cost").classList.add("invalid");
+        } 
+        else if(cost == "" ){ 
+          document.querySelector(
+            ".js-total-cost"
+          ).innerHTML = `you must enter a number above 0 to calculate first!`;
+          document.querySelector(".js-total-cost").classList.add("invalid");
+
+         } else if(cost < 0 ){ 
+          document.querySelector(
+            ".js-total-cost"
+          ).innerHTML = `you cannot calculate a negative $ value`;
+          document.querySelector(".js-total-cost").classList.add("invalid");
+
+        } else if (cost < 40) {
+          document.querySelector(".js-total-cost").classList.remove("invalid");
+          document.querySelector(
+            ".js-total-cost"
+          ).innerHTML = `$ ${(cost + 10).toFixed(2)}`;
+        } else {
+          document.querySelector(".js-total-cost").classList.remove("invalid");
+        document.querySelector(".js-total-cost").innerHTML = `$ ${cost.toFixed(2)}`;
+        }
+      }
+      function calculateCostEnter(event) {
+        if (event.code === "Enter") {
+          calculateCost();
+        }
+      }
+    </script>
+  </body>
+</html>

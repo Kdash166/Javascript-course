@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(25, 25, 25);
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+
+}
+.title{
+    font-weight: bold;
+    font-size: 36px;
+
+}
+
+.rock,.paper, .scissors{
+    background-color: black;
+    border: 3px solid white;
+    margin-right: 15px;
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    cursor:pointer;
+    transition: height 0.5s,
+    width 0.5s, background-color 0.5s;
+
+}
+
+.rock:hover,.paper:hover, .scissors:hover{
+    height: 105px;
+    width: 105px;
+    background-color: white;
+  
+  
+}
+
+.reset{
+background-color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: larger;
+    cursor:pointer;
+}
+.emoji{
+    width: 50px;
+    height: 50px;
+}
+
+.js-result{
+    margin-top:50px;
+    font-weight: bold;
+    font-size: 24px;
+}
+    .js-moves{
+    margin-bottom: 30px;
+
+    }
+    .js-score{
+        font-size: 18px;
+        margin-bottom: 30px;
+    }

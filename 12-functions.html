@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced functions</title>
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+    <script>
+        greeting();
+        // declaring a function as below means hoisting is possible
+        // this is where a function can be called before it has 
+        // been declared.
+        function greeting() {
+            console.log('hello');
+        }
+        greeting();
+        // calling or running the function
+        // functions are values 
+
+        const num = 2;
+
+        // we can save a function inside a varable 
+        // because functions are values
+// you can see this below
+//function1();
+// cant access the function as it hasnt been initialised yet error.
+        const function1 = function (){
+            console.log("hello2")
+        };
+        // hoisting wont work here when declaring a function 
+        // while saving it to a variable 
+
+        // this is called an anonymous function because the function doesnt have a name
+        // it can still run though.
+        console.log(function1);
+        console.log(typeof function1);
+        // a function is just another type of variable
+        function1();
+// if you put the brackets infront of the variable 
+    
+        const object1 ={ 
+            num:2,
+            fun:function (){
+                console.log("hello3")
+            }
+// this can be an anonymous function
+        }
+        object1.fun();
+    // this is called a method, you use dot notation
+    // just like you do to access any other part of an object
+    // you use () at the end of the function to run it.
+function display(param){
+    console.log(param)
+}
+display(2);
+// passing a value into  function
+function run(param){
+param();
+}
+
+run(function()
+{
+    console.log("hello4")
+    }
+);
+// the function that is being passed into the function
+// is called a callback function.
+// functions are values anything you can do with 
+// set time out allows us to run a function in the future
+
+
+setTimeout(function(){
+    console.log("timeout")
+    console.log("timeout2")
+}, 5000);
+// setTimeout calls a function with a delay specified in milliseconds
+// the above code will only run after 5 seconds. 
+/* aysnchronous code*/
+// 
+console.log("nextline");
+// the compiler sets the timer and moves on to the next line of code
+// so nextline is displayed first then when the timer runs timeout 
+// is displayed below nextline.
+// this is called asynchronous code.
+// this means the computer wont wait for a certain line to finish it will 
+// skip to the next line and run the other line when it has too. 
+// synchronous code is the opposite it means the computer executes lines 
+// of code one by one and wont skip a line
+// all code so far syncchronous code.
+// most code is synchronous 
+// settimeout allows us to do other things 
+setInterval(function(){
+    console.log("Interval");
+}, 3000);
+// all intervals generate a unique id that can be used to stop them
+// you can assign a this to a variable and use clearInterval(variable)
+// to stop the interval the variabke needs to be declared outside 
+// the function with the intervl in due to scope.
+console.log("nextLine2");
+// setInterval will run the function every x seconds
+// this means that it will keep executing the code every 3 
+// seconds. 
+
+['make Dinner', 
+'wash Dishes', 
+'watch youtube'].forEach(function(value, index)
+{
+    if(value === 'wash Dishes'){
+        return;
+    }
+    // this is a way of using continue like a for loop 
+    // but with for each where it skips a value
+    // there is no way to easily break a forEach loop
+    // if you do need ot break out of a loop
+    // it is better to use a regular loop.
+    console.log(index); 
+   console.log(value); 
+});
+
+// .forEach is the prefered method of iterating through an array
+// because it is easier to read than a traditional for loop
+// .forEach also has another parameter it accepts index aswell 
+
+</script>
+  </body>
+</html>

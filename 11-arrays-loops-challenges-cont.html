@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+
+const arrayTest1 = ["hello", "search", "dog", "world", "dog", "cat"];
+const arrayTest2 = ["how", "do", "you", "do", "mayor", "marley"];
+const arrayTest3 = ["hello", "see", "how", "search", "dog", "search"];
+const arrayTest4 = ["egg", "egg", "dog", "tomato", "egg", "cucumber"];
+const arrayTest5 = ["egg", "salad", "ham", "ham", "rat", "rat"];
+const arrayTest6 = ["egg", "egg", "fish", "lettuce", "lettuce", "fish"];
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            // Instead of creating an accumulator
+            // variable and updating it in the loop,
+            // we can just return i directly, when
+            // we find it since this is a function.
+        return i;
+          }
+        }
+
+        // If the function has not returned by now,
+        // logically that means the word must not
+        // exist in the array, so we'll return -1.
+        return -1;
+      }
+
+      function uniqueWordArray(array){
+        let noRepeats = []
+        for (let i = 0; i < array.length; i++){ 
+        if(findIndex(noRepeats, array[i]) === -1){
+        // if find index returns -1 it means that the word hasnt been found 
+    // in no repeats so it is pushed to no repeats
+    //  otherwise the value will be 0 or a positive interger and that 
+    // word wont be pushed as it already exists in no repeats.
+            noRepeats.push(array[i]);
+        } 
+    }
+    console.log(noRepeats)
+    }
+
+        uniqueWordArray(arrayTest4);
+        uniqueWordArray(arrayTest5);
+        uniqueWordArray(arrayTest6);
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+    <button class="js-start" onclick="startTimer()">Start</button>
+    <button class="js-add-to-cart" onclick="addToCartMessage()">Add to Cart</button>
+<button class="add" onclick="
+    messages++;
+    displayNotification();
+
+    ">add</button>
+<button class="remove" onclick=" 
+ if (messages > 0) {
+    messages--;
+
+    if (messages === 0) {
+      stopNotification();
+    }
+  }">remove</button>
+
+    <p class="cart-message"></p>
+    <script>
+        
+        // 12a
+    const add = function (var1, var2){
+      return  var1 + var2;
+
+    }
+
+    console.log(add(2, 3));
+    console.log(add(2, 7));
+// 12b
+    function runTwice(fun){
+       console.log(fun);
+       console.log(fun);
+
+    };
+
+    runTwice(add(2, 3));
+let messages = 2;
+
+// Save the intervalId in case we need to cancel it.
+let intervalId;
+
+// We'll use this variable to keep track of whether
+// or not we're displaying the notification.
+let isDisplayingNotification;
+
+// Start displaying the notification in the tab
+// when the page first loads.
+displayNotification();
+
+function displayNotification() {
+  // If we're already displaying the notification,
+  // stop this function because we don't want to
+  // create 2 intervals at the same time.
+  if (isDisplayingNotification) {
+    return;
+  }
+
+  isDisplayingNotification = true;
+
+  intervalId = setInterval(function() {
+    if (document.title === 'App') {
+      document.title = `(${messages}) New messages`;
+    } else {
+      document.title = 'App';
+    }
+  }, 2000);
+}
+
+function stopNotification() {
+  isDisplayingNotification = false;
+
+  clearInterval(intervalId);
+  document.title = 'App';
+}
+
+
+
+
+
+    function startTimer() {
+    const startBtn = document.querySelector(".js-start");
+    // settimeout can also be used inside a function
+    startBtn.innerHTML = "Loading...";
+    setTimeout(function() {
+        startBtn.innerHTML = "Finished!";
+    }, 3000); // Delay for 1 second (1000 milliseconds)
+}
+
+let timer;
+    function addToCartMessage(){
+        const cartBtnMessage = document.querySelector(".cart-message");
+        if (cartBtnMessage.innerHTML === "Added to Cart!"){
+            clearTimeout(timer);
+            
+        
+        } 
+        cartBtnMessage.innerHTML = "Added to Cart!";
+       timer = setTimeout(function() {
+        cartBtnMessage.innerHTML = "";
+    }, 2000);
+}
+
+    
+
+    </script>
+  </body>
+</html>

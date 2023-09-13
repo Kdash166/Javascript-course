@@ -151,6 +151,87 @@ for(let i = 0; i < nums.length;  i ++){
 }
 // if you put it here you get the final value of the array
 console.log(numsDoubled);
-    </script>
+// arrays are references just like objects
+const arrayRef = [1, 2, 3];
+const arrayRef2 = arrayRef;
+arrayRef2.push(4);
+console.log(arrayRef);
+console.log(arrayRef2);
+// the console will log arrayRef as having 4 added to it 
+// this is because arrayRef and arrayRef2 point to the same
+// place.
+const arrayRef3 = [1, 2, 3];
+const arrayRef4 = arrayRef3.slice();
+// this will make a copy of the values in array 1 
+// now you will see that the push only effects arrayRef4
+arrayRef4.push(4);
+console.log(arrayRef3);
+console.log(arrayRef4);
+   
+const [firstValue, secondValue] = [1, 2, 3];
+console.log(firstValue);
+console.log(secondValue);
+// this is an easy short hand way to pull the value of an array 
+// and assign it to a variable.
+
+for(i=1; i <= 10; i++){
+  // if ( i === 3){
+  //   continue;
+// this will skip over that iteration so it will jump form 2 to 4
+if ( i % 3 === 0){
+    continue;
+      // this is the remainder operator is says if i / 3 = 0 then 
+      // skip the value so 3 6 and 9 if the code hadnt been broken 
+      // at 8 would have been skipped. 
+}
+  console.log(i);
+  if (i === 8){
+    break;
+  }
+  // break lets us stop a loop early 
+}
+
+let a = 1;
+
+while (a <= 10){
+   if ( a % 3 === 0){
+    a++;
+
+      continue;
+  }
+  // this causes an infintite loop if placed here
+  // but if you add the increment step manually here it will function
+  // as normsl
+  console.log(a);
+  a++;
+  
+}
+
+function doubleArray(nums){
+
+const numsDoubled2 = [];
+// use different types of values to accumulate a result
+
+for(let i = 0; i < nums.length;  i ++){
+  const num = nums[i];
+  if (num === 0){
+    return numsDoubled2;
+  }
+  // this if stament acts like break but returns the array early
+  // if zero is found (as it cant be doubled)!
+  // return is another way of breaking out of a loop when it is 
+  // in a function. 
+  numsDoubled2.push(num*2);
+  
+}
+return numsDoubled2;
+// this is used to break out of the function passing the value
+// out
+}
+
+console.log(doubleArray([9,9,10]));
+console.log(doubleArray([20,30,40, 0, 5]));
+
+  </script>
   </body>
 </html>

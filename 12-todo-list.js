@@ -7,34 +7,24 @@ let todoList = JSON.parse(localStorage.getItem("todoList")) || []; // empty arra
 renderTodoList();
 function renderTodoList(){
 letTodoListHTML='';
-
-for (i = 0;  i < todoList.length; i++){
-const todoObject = todoList[i];
-// const name = todoObject.name;
-// const dueDate = object.dueDate;
-const { name, dueDate } = todoObject;
-// this is called object destructuring and is used when 
-// the varaible has the same name as the object value 
-const html = `
-<div>${name}</div>
-<div>${dueDate}</div>
-<button class="delete-btn" onclick="
-todoList.splice(${i}, 1);
-renderTodoList();
-">Delete</button>`;
-// had to seperate into three elements for the div to be displayed properly;
-// splice takes which index we want to remove we can take I from the 
-// loop.
-// you then need to rerender the todo list so you can use the 
-// function that is already made. following modular design
-// this is called generating the html 
-// this is done dynamically rather than statically
-letTodoListHTML += html;
+todoList.forEach(function(todoObject, index){
+    // const name = todoObject.name;
+    // const dueDate = object.dueDate;
+    let { name, dueDate } = todoObject;
+    // this is called object destructuring and is used when 
+    // the varaible has the same name as the object value 
+    const html = `
+    <div>${name}</div>
+    <div>${dueDate}</div>
+    <button class="delete-btn" onclick="
+    todoList.splice(${index}, 1);
+    renderTodoList();
+    ">Delete</button>`;
+    letTodoListHTML += html;
+    
+});
 localStorage.setItem("todoList", JSON.stringify(todoList));
-}
-
-
-document.querySelector('.js-todo-list').innerHTML = letTodoListHTML;
+    document.querySelector('.js-todo-list').innerHTML = letTodoListHTML;
 }
 function addTodo(){
 const inputElement = document.querySelector('.js-name-input');

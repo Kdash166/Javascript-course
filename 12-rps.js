@@ -6,9 +6,37 @@ let score = JSON.parse(localStorage.getItem("score")) || {
 
 updateScoreElement();
 
+document.querySelector(".js-rock-btn")
+.addEventListener('click', () => {
+  playGame('rock');
+});
 
+document.querySelector(".js-paper-btn")
+.addEventListener('click', () => {
+  playGame('paper');
+});
 
-  function playGame(playerMove) {
+document.querySelector(".js-scissors-btn")
+.addEventListener('click', () => {
+  playGame('scissors');
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if(event.key 
+    === 'r'){
+    playGame('rock')
+  };
+  if(event.key === 'p'){
+    playGame('paper')
+  };
+  if(event.key === 's'){
+    playGame('scissors')
+  };
+});
+
+//earlier we learnt about event.key add event listenerner also provides this function 
+// the above code logs what key has been pressed to the console
+function playGame(playerMove) {
     const computerMove = generateComputerMove();
     result = "";
 
@@ -84,10 +112,18 @@ updateScoreElement();
     return computerMove;
   }
 let isAutoPlaying = false;
-let intervalID = ""
+let intervalID;
+
+//const autoPlay = () => {
+
+//};
+// you can write the function as an arrow function however writing 
+// it in the standard way is easier to read and it allows 
+// for hoisting
+
   function autoPlay(){
     if(!isAutoPlaying){
-    intervalID = setInterval(function (){
+    intervalID = setInterval( () => {
       const playerMove = generateComputerMove();
       playGame(playerMove);
     },1000)

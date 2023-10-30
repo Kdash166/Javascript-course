@@ -8,21 +8,10 @@
   </head>
 
   <body>
-    <button class="js-start" onclick="startTimer()">Start</button>
-    <button class="js-add-to-cart" onclick="addToCartMessage()">Add to Cart</button>
-<button class="add" onclick="
-    messages++;
-    displayNotification();
-
-    ">add</button>
-<button class="remove" onclick=" 
- if (messages > 0) {
-    messages--;
-
-    if (messages === 0) {
-      stopNotification();
-    }
-  }">remove</button>
+    <button class="js-start">Start</button>
+    <button class="js-add-to-cart" >Add to Cart</button>
+<button class= "add">add</button>
+<button class= "remove">remove</button>
 
     <p class="cart-message"></p>
     <script>
@@ -66,7 +55,7 @@ function displayNotification() {
 
   isDisplayingNotification = true;
 
-  intervalId = setInterval(function() {
+  intervalId = setInterval(() => {
     if (document.title === 'App') {
       document.title = `(${messages}) New messages`;
     } else {
@@ -75,7 +64,7 @@ function displayNotification() {
   }, 2000);
 }
 
-function stopNotification() {
+const stopNotification = () => {
   isDisplayingNotification = false;
 
   clearInterval(intervalId);
@@ -86,11 +75,11 @@ function stopNotification() {
 
 
 
-    function startTimer() {
+    const startTimer = () => {
     const startBtn = document.querySelector(".js-start");
     // settimeout can also be used inside a function
     startBtn.innerHTML = "Loading...";
-    setTimeout(function() {
+    setTimeout(() => {
         startBtn.innerHTML = "Finished!";
     }, 3000); // Delay for 1 second (1000 milliseconds)
 }
@@ -109,7 +98,36 @@ let timer;
     }, 2000);
 }
 
+document.querySelector(".js-start").addEventListener("click", () => {
+  startTimer();
+});
+
+document.querySelector(".js-add-to-cart").addEventListener("click", () => {
+  addToCartMessage();
+});
+
     
+document.querySelector(".add").addEventListener("click", () => {
+  messages++;
+  displayNotification();
+});
+
+document.querySelector(".remove").addEventListener("click", () => {
+  if (messages > 0) {
+    messages--;
+
+    if (messages === 0) {
+      stopNotification();
+    }
+  }
+
+});
+
+ 
+
+
+
+
 
     </script>
   </body>

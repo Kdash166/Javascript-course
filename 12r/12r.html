@@ -3,7 +3,7 @@
   <head>
     <title>rock paper scissors</title>
 
-    <link rel="stylesheet" href="12-rps.css" />
+    <link rel="stylesheet" href="12r.css" />
     <!-- you can use multiple link tags to compartmetalise your CSS -->
   </head>
 
@@ -31,26 +31,18 @@
     <p class="js-score"></p>
 
     <button
-      onclick=" 
-    score.wins = 0; 
-    score.losses = 0;
-     score.ties = 0;
-localStorage.removeItem('score');
-updateScoreElement();
-
-"
       class="reset"
     >
       Reset Score
     </button>
 
-    <button class="autoplay"
-    onclick="
-autoPlay();">
+    <button class="autoplay js-autoplay"
+    >
       Auto Play
     </button>
+    <div class = "js-reset-message"></div>
 
-    <script src = "/12-rps.js"></script>
+    <script src = "12r.js"></script>
     <!-- you can use multiple script tags to compartmetalise your Javascript -->
   </body>
 </html>

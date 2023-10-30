@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>challenge exercises advanced functions 2</title>
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+      //12j
+      const multiply = (num1, num2) => {
+        return num1 * num2;
+      };
+      console.log(multiply(3, 4));
+      //12k
+
+      const multiplyOneLine = (num1, num2) => num1 * num2;
+
+      console.log(multiplyOneLine(7, 4));
+      // 12l
+
+      function countPositiveNumbers(array) {
+        let count = 0;
+        array.forEach(function (value, index) {
+          if (value >= -1) {
+            count++;
+          }
+        });
+        return count;
+      }
+      console.log(countPositiveNumbers([1, 4, 5, 6, -2, 4, -3, 0, -1]));
+      //12m
+      const addNum = (array, num) => array.map((value) => value + num);
+
+      console.log(addNum([3, 4, 5], 6));
+
+      //12n
+      const removeEgg = (array) =>
+        array.filter((value, index) => {
+          return value !== "egg";
+        });
+
+      console.log(
+        removeEgg(["ham", "sausage", "egg", "egg", "beef", "cheese", "egg"])
+      );
+
+      // 12o
+      let eggCounter = 0;
+      const removeFirstTwoEggs = (array) =>
+        array.filter((value, index) => {
+          if (value === "egg") {
+            eggCounter++;
+            return eggCounter < 2 ? true : false;
+          } else {
+            return true;
+          }
+        });
+
+      console.log(
+        removeFirstTwoEggs([
+          "ham",
+          "sausage",
+          "egg",
+          "egg",
+          "beef",
+          "cheese",
+          "egg",
+        ]));
+    </script>
+  </body>
+</html>

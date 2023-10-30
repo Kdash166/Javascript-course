@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+        const regularfunction = function(param, param2){
+            console.log("hello");
+            return 5
+        }
+        // these two syntaxes do the same thing 
+        // but the word function is replaced with the arrow
+        // as you can see parameters and return statements work in both functions
+        // but there are some differences.
+        const arrowFunction = (param, param2) =>{
+            console.log("hello");
+            return 5;
+        }
+        arrowFunction();
+        // this will display hello
+        // this works the same way as a regular function
+const oneParam = param =>{
+console.log(param + 1)
+}
+
+oneParam(2);
+
+const oneLine = () =>  2+3;
+// if the arrow function is only one line you can remove the parenthases as well as the 
+// return statement.
+console.log(oneLine());
+// arrow functions are shorter ways of writing functions with a few shortcuts.
+
+
+// when an arrow function only has one param the brackets are optional and can be removed
+// as you can see above
+
+['make Dinner', 
+'wash Dishes', 
+'watch youtube'
+].forEach((value, index) =>
+{
+    if(value === 'wash Dishes'){
+        return;
+    }
+  console.log(index);
+  console.log(value);
+  });
+  //for each is a way to loop through an array you can see the function
+  // has been replaced with an arrow here. 
+  // when we are passing a function into another function
+  // like for each it is recommended to use arrow functions
+  // as it makes the code easier to read.
+
+  /*Closure */
+
+  
+  // if a function has access to a value it will always have access to that value
+  // the value gets packaged together (enclosed).
+  // closures naturally happens in javascript code once a function is no longer 
+  // closures arent used that often. 
+
+  // functions are values
+  // set timeout set interval - run a function in the future. 
+  //  we learned an array method called .forEach - cleaner way of looping through an array
+//  as an alternative to a for loop. 
+//  we learned about arrow functions and .addEventListener and .removeEventListener 
+// which replaces onclick and has advantages over onClick. 
+// We also learned filter (creates a new array with values filtered out)
+// and map(maps values to a new array after some change to the values)*2
+// and closures in fucntions
+// To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function.
+
+// The inner function will have access to the variables 
+// in the outer function scope, even after the outer function has returned.
+    </script>
+  </body>
+</html>

@@ -8,7 +8,32 @@
   </head>
 
   <body>
+    <button  class="js-btn" >click</button>
     <script>
+        const buttonElement = document.querySelector('.js-btn');
+        const eventListener =  () => {
+            alert('click');
+    };
+    // to removeEventListener you have to first save the function into a variable
+
+        buttonElement.addEventListener('click', eventListener);
+        buttonElement.addEventListener('click', ()=> alert('click2'));
+        // this code does the same as onclick 
+        // addeventlistener has two parameters one is the event you want 
+        // to listen for.
+        // you can find the word it is the word after on 
+        // the next parameter is a function we want to run
+        // addeventlistener has some advantages over onlclick
+        // it lets us add multiple event listners for an event
+        // we can also use removeEventListener to remove an event
+
+        buttonElement.removeEventListener('click', eventListener )
+// the first parameter is the name of the event the second parameter is the name
+// of the function you wish to remove.
+// add event listener gives us more control over events we can add multiple events and 
+// take them away. 
+// because of this best practice is to use add event listener.
+        
         greeting();
         // declaring a function as below means hoisting is possible
         // this is where a function can be called before it has 
@@ -123,7 +148,52 @@ console.log("nextLine2");
 // .forEach is the prefered method of iterating through an array
 // because it is easier to read than a traditional for loop
 // .forEach also has another parameter it accepts index aswell 
+const object2 = {
+    method: () => {
 
+    },
+    method(){
+// this is called the short hand method syntax
+// this is easier to read so it is recommended you 
+// use this.
+    }
+}
+
+// you could save a method in an object like this 
+// but methods have a short cut.
+
+console.log([1, -3, 5].filter((value, index) => {
+    // if(value >= 0){
+        // return true;
+    // } else {
+        // return false;
+    // }
+  
+return value >= 0;
+// can return a truthy or falsey value
+// this code does the same as the lines of code above
+}));
+// filter works the same way as for each. you can use an arrow function
+// inside the brackets
+// creates a new array if the inner function returns true it will put the value 
+// in the array if the inner value returns false it will put the value in an array.
+// in this example all the values  return true so all values will be added 
+
+
+[1,1,3].map((value, index) => {
+    //return  10 
+    // each value becomes 10
+    // you can use the key word value in the return statement
+return value * 2;
+// this will return the value times 2
+} )
+// map allows you to manipulate values
+[1,1,3].map(value =>  value * 2);
+ 
+//this code does the same thing as the code above. 
+// index isn't used so you can remove that leaving one param. 
+// if only one param is left you dont need to use brackets or curly brackets. 
+// as long as the function is on the same line.  
 </script>
   </body>
 </html>
